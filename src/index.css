@@ -29,3 +29,8 @@ div{
 button{
   margin:1rem 1rem;
 }
+.nav-link{
+  text-decoration: none;
+  margin:10px;
+  padding: 10px;
+}

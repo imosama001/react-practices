@@ -41,6 +41,9 @@ function App() {
   const navigateToUseRefTimer=()=>{
     navigate('/useRefTimer')
   }
+  const navigateToSecureHomePage=()=>{
+    navigate("secureHomePage");
+  }
   return (
    <div>
     <h2>React Practices</h2>
@@ -74,6 +77,11 @@ function App() {
     <h3>UseRefFocus</h3>
     <button onClick={navigateToUseRefFocus}>UseRef Focus</button>
     <button onClick={navigateToUseRefTimer}>UseMemo Timer</button>
+
+    <hr></hr>
+    <h3>Secure/Protected Route</h3>
+    <button onClick={navigateToSecureHomePage}>Secure Home Page</button>
+
 
     
    </div>

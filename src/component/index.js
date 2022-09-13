@@ -10,5 +10,4 @@ export {default as UseCallback} from "./UseCallback/ParentComponent"
 export {default as UseMemo} from "./UseMemo/UseMemo"
 export {default as UseRefFocus} from "./UseRef/FocusInput"
 export {default as UseRefTimer} from "./UseRef/HookTimer"
-
-
+export {default as HomePage} from "./secure routes/HomePage"

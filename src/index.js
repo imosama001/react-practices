@@ -3,12 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import "./index.css"
-import {UseState,UseEffect,UseEffectTimer, UseEffectApi, UseContext, UseReducer2, UseReducerApi, UseCallback, UseMemo, UseRefFocus, UseRefTimer} from './component';
+import {UseState,UseEffect,UseEffectTimer, UseEffectApi, UseContext, UseReducer2, UseReducerApi, UseCallback, UseMemo, UseRefFocus, UseRefTimer, HomePage} from './component';
 import { useNavigate ,BrowserRouter,Routes,Route,Link} from "react-router-dom";
 import UseReducer from './component/UseReducer/UseReducer';
+import ProfilePage from './component/secure routes/ProfilePage';
+import LoginPage from './component/secure routes/LoginPage';
+import { AuthProvider } from './Auth/auth';
+import RequireAuth from './Auth/RequireAuth';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <AuthProvider> 
   <BrowserRouter>
     <Routes>
       <Route path='/' element={<App/>} />
@@ -24,10 +29,14 @@ root.render(
       <Route path="/useMemo" element={<UseMemo/>}/>
       <Route path="/useRefFocus" element={<UseRefFocus/>}/>
       <Route path="/useRefTimer" element={<UseRefTimer/>}/>
+      <Route path='/secureHomePage' element={<HomePage></HomePage>}/>
+      <Route path='profile' element={<RequireAuth><ProfilePage/></RequireAuth>}/>
+      <Route path='login' element={<LoginPage/>}/>
 
       
     </Routes>
   </BrowserRouter>
+  </AuthProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
